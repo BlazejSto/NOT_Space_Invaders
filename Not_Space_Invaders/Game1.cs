@@ -55,7 +55,7 @@ namespace Not_Space_Invaders
             entityTexture = Content.Load<Texture2D>("Bullet"); 
             bullet = new Bullet(new Rectangle(0, 0, entityTexture.Width, entityTexture.Height), entityTexture, Color.Red);
 
-            
+
             //alienShips = new EnemyShips(new Rectangle(0, 0, entityTexture.Width, entityTexture.Height), entityTexture, Color.White, shipsArrray, otherSprite);
             //bullet.SetPosition(new Rectangle(_graphics.PreferredBackBufferWidth / 2 - entityTexture.Width / 2,
             //    _graphics.PreferredBackBufferHeight - entityTexture.Height - 30,
@@ -73,13 +73,12 @@ namespace Not_Space_Invaders
                 Exit();
             }
             player1.Movement(_graphics);
-            bullet.FireBullet(player1);
             allShips.ShipsMovement(_graphics);
-            
-            
-            
-            
-            
+            bullet.FireBullet(player1);
+
+
+
+
 
 
 
@@ -109,6 +108,7 @@ namespace Not_Space_Invaders
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
+
             player1.DrawSprite(_spriteBatch);
             bullet.DrawSprite(_spriteBatch);
             foreach (Aliens e in shipsArray)
@@ -120,11 +120,10 @@ namespace Not_Space_Invaders
                     e.Position = new Rectangle(e.Position.X, 1000, 10, 10);
                     bullet.InitialPos(player1);
                 }
-            }    
-
-            foreach (Aliens e in shipsArray)
+            }
+            foreach (Aliens a in shipsArray)
             {
-                e.DrawSprite(_spriteBatch);
+                a.DrawSprite(_spriteBatch);
             }
 
 

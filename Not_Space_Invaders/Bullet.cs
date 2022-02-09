@@ -28,17 +28,14 @@ namespace Not_Space_Invaders
             {
                 Fired = true;
             }
-            if (entityPos.Y > inSprite.Position.Y && Fired)
+            if (entityPos.Y > inSprite.Position.Y && Fired == true)
             {
                 yPos -= 5; 
                 entityPos = new Rectangle(xPos, yPos, entityTexture.Width, entityTexture.Height);
-                
-
             }
             else
             {
-               
-                InitialPos(inSprite);
+                InitialPos(inSprite); //Changed for test
                 Fired = false;
             }
  
