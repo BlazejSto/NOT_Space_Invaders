@@ -20,7 +20,7 @@ namespace Not_Space_Invaders
         {
             xPos = inSprite.Position.X + inSprite.Position.Width / 2 - 5;
             entityPos = new Rectangle(xPos, inSprite.Position.Y, entityTexture.Width, entityTexture.Height);
-            yPos = entityPos.Y;//Comment to test push
+            yPos = entityPos.Y;//Comment to test 
         }
         public void FireBullet(Sprite inSprite)
         {
