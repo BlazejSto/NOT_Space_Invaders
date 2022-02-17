@@ -53,17 +53,25 @@ namespace Not_Space_Invaders
                         moveLeft = false;
                         MoveRight = true;
                     }
-                }    
+                }
             }
             foreach (Aliens e in shipsArray)
             {
                 if(MoveRight == true)
                 {
                     e.Position = new Rectangle(e.Position.X + 1, e.Position.Y, Texture.Width, Texture.Height);
+                    if (e.Position.X == inGraphics.PreferredBackBufferWidth)
+                    {
+                        e.Position = new Rectangle(e.Position.X, e.Position.Y - 1, e.Texture.Width, Texture.Height);
+                    }
                 }
                 if(moveLeft == true)
                 {
                     e.Position = new Rectangle(e.Position.X - 1, e.Position.Y, e.Texture.Width, Texture.Height);
+                    if (e.Position.X == inGraphics.PreferredBackBufferWidth)
+                    {
+                        e.Position = new Rectangle(e.Position.X, e.Position.Y - 1, e.Texture.Width, Texture.Height);
+                    }
                 }
             }
         }

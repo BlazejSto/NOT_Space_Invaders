@@ -21,8 +21,8 @@ namespace Not_Space_Invaders
         }
         public bool Collided(int inLives)
         {
-            return true;
             playerLives -= 1;
+            return true;
 
         }
         public void Movement(GraphicsDeviceManager inGraphics)

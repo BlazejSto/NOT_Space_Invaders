@@ -53,7 +53,7 @@ namespace Not_Space_Invaders
             allShips = new EnemyShips(entityPos, entityTexture, entityColour, shipsArray, otherSprite);
 
             entityTexture = Content.Load<Texture2D>("Bullet"); 
-            bullet = new Bullet(new Rectangle(0, 0, entityTexture.Width, entityTexture.Height), entityTexture, Color.Red);
+            bullet = new Bullet(player1.Position, entityTexture, Color.Red);
 
 
             //alienShips = new EnemyShips(new Rectangle(0, 0, entityTexture.Width, entityTexture.Height), entityTexture, Color.White, shipsArrray, otherSprite);
@@ -72,6 +72,7 @@ namespace Not_Space_Invaders
             {
                 Exit();
             }
+            
             player1.Movement(_graphics);
             allShips.ShipsMovement(_graphics);
             bullet.FireBullet(player1);
@@ -119,6 +120,7 @@ namespace Not_Space_Invaders
                     e.IsDrawn = false;
                     e.Position = new Rectangle(e.Position.X, 1000, 10, 10);
                     bullet.InitialPos(player1);
+                    bullet.BulletFired = false;
                 }
             }
             foreach (Aliens a in shipsArray)
